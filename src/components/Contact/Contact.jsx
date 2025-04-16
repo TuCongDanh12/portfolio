@@ -15,7 +15,32 @@ const Contact = () => {
     email: '',
     subject: '',
     message: '',
-  })
+  });
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs
+      .send(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        form, // State chứa dữ liệu
+        import.meta.env.VITE_PUBLIC_KEY
+      )
+      .then(
+        (response) => {
+          alert(`SUCCESS! Your message has been sent. Status: ${response.status}, Text: ${response.text}`);
+          setForm({
+            name: '',
+            email: '',
+            subject: '',
+            message: '',
+          });
+        },
+        (error) => {
+          alert(`FAILED! Your message could not be sent. Error: ${error.text}`);
+        }
+      );
+  };
 
   const handleChange = (e) => {
     const name = e.target.name
@@ -23,32 +48,7 @@ const Contact = () => {
     setForm({ ...form, [name]: value })
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    emailjs
-      .send(
-        import.meta.env.VITE_SERVICE_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
-        form,
-        import.meta.env.VITE_PUBLIC_KEY
-      )
-      .then(
-        (response) => {
-          alert(`SUCCESS! Your message has been sent. Status: ${response.status}, Text: ${response.text}`)
-          // clear forms value
-          setForm({
-            name: '',
-            email: '',
-            subject: '',
-            message: '',
-          })
-        },
-        (error) => {
-          alert(`FAILED! Your message could not be sent. Error: ${error.text}`)
-        }
-      )
-  }
-
+  
   return (
     <section
       className="pb-[180px] bg-gradient-180 from-bgColor to-bgColor dark:bg-gradient-180 dark:from-bgColorDark dark:bg-bgColorAltDark px-[5%] sm:px-[2%] 2xl:px-[17%]"
