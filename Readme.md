@@ -1,12 +1,3 @@
-![alt text](https://github.com/khakiiman/portfolio/blob/main/src/assets/IntroPic.png?raw=true)
-
-# New Portfolio Website
-
-This is my first portfolio website built using Vite and React technologies. I used TailwindCSS for styling and included some packages such as Swiper.js, Hero Icons, React Icons, React Animated Number, React Scroll and Framer Motion.
-
-## Description
-
-This website created by best new technology like:
 
 - React.js
 - Tailwindcss
