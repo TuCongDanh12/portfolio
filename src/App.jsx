@@ -21,7 +21,7 @@ const App = () => {
       <Pricing /> */}
       {/* <Blog /> */}
       <Contact />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 };
