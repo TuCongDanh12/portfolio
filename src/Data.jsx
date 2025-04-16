@@ -200,8 +200,8 @@ export const project = [
     title: "Developer Portfolio",
     description:
       "This Portfolio involves creating a visually appealing and user-friendly website that showcases the skills and portfolio of a frontend developer.",
-    url: "http://imankhaki.netlify.app/",
-    sourceUrl: "https://github.com/khakiiman/portfolio",
+    url: "https://portfolio-steel-mu-10.vercel.app/#home",
+    sourceUrl: "https://github.com/TuCongDanh12/portfolio",
   },
 
   // {
